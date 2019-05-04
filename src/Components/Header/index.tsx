@@ -3,7 +3,11 @@ import Logo from './logo.png';
 
 import { Navbar, Form, FormControl, FormLabel, Button } from 'react-bootstrap';
 
-function Header() {
+interface Props {
+  searchNow: Function;
+}
+
+function Header(props: Props) {
   return (
     <div className="Header">
       <Navbar bg="light" expand="lg">
@@ -15,7 +19,7 @@ function Header() {
         </Navbar.Brand>
         <Form inline className="col-md-10">
           <FormControl type="text" placeholder="Search" className="col-md-10" />
-          <Button variant="outline-success">Search</Button>
+          <Button variant="outline-success" onClick={() => props.searchNow()}>Search</Button>
         </Form>
       </Navbar>
     </div>
