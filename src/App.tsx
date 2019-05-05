@@ -1,11 +1,15 @@
 import React from 'react';
 import './App.css';
-import Dashboard from './Components/Dashboard';
+import Main from './route';
+import Header from './Components/Header';
 
-function App() {
+const App = () => {
   return (
-    <Dashboard></Dashboard>
-  );
+    <div className="Dashboard">
+      <Header />
+      <Main />
+    </div>
+  )
 }
 
 export default App;
