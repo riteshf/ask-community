@@ -1,11 +1,18 @@
 import React from 'react';
 import Logo from './logo.png';
-import { Navbar, Form, FormControl, FormLabel, Button, FormGroup } from 'react-bootstrap';
+import { Navbar, Form, FormLabel, Button, FormGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
+interface Props {
+  search: Function,
+}
 
-function Header() {
-  const searchNow = () => { };
+function Header(props: Props) {
+  const [string, onStringChange] = React.useState('');
+
+  const onSearch = (searchString: string) => {
+    props.search(searchString);
+  }
   return (
     <div className="Header">
       <Navbar bg="light" expand="lg">
@@ -19,8 +26,9 @@ function Header() {
             </Link>
           </div>
           <div className="col-md-8">
-            <FormControl type="text" placeholder="Search" style={{ width: '90%' }} />
-            <Button variant="outline-success" onClick={() => searchNow}>Search</Button>
+            <input className="form-control" type="text" style={{ width: '90%' }} placeholder="Search"
+              value={string} onChange={e => onStringChange(e.target.value)} />
+            <Button variant="outline-success" onClick={() => onSearch(string)}>Search</Button>
           </div>
           <div className="col-md-2">
             <Link to="/askQuestion">
