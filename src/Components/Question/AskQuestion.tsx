@@ -2,7 +2,7 @@ import React from 'react';
 
 function AskQuestion() {
   return (
-    <div className="QuestionRow">
+    <div className="AskQuestion">
       Hello
     </div >
   );

@@ -26,8 +26,8 @@ function Header() {
             <Link to="/askQuestion">
               <Button variant="primary">Ask</Button>
             </Link>
-            <Link to="/askQuestion" style={{ paddingLeft: '5px' }}>
-              <Button variant="primary">User Login</Button>
+            <Link to="/" style={{ paddingLeft: '5px' }}>
+              <Button variant="primary">Login</Button>
             </Link>
           </div>
         </Form>
