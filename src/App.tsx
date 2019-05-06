@@ -6,16 +6,16 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from 'react-apollo';
 
 const client = new ApolloClient({
-  uri: "http://locolhost:4000/graphql"
+  uri: "http://localhost:4000/graphql"
 });
 
 const App = () => {
-  const [searchString, setSearchString] = React.useState('');
+  const [searchBy, onSearched] = React.useState('');
   return (
     <div className="Dashboard">
       <ApolloProvider client={client} >
-        <Header search={setSearchString} />
-        <Main search={searchString} />
+        <Header search={onSearched} />
+        <Main search={searchBy} />
       </ApolloProvider>
     </div>
   )
