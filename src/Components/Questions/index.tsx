@@ -7,11 +7,23 @@ interface Props {
 }
 
 const getQuestions = gql`{ 
-  questions { title, answers { content, comments { content } }, comments { content } } 
+  getQuestions { _id, title, createdAt, answers { _id, createdAt }, comments { _id, createdAt } } 
 }`;
 
 interface IQuestion {
-  questions: [{ star: number, answers: [], title: string, }]
+  getQuestions: [{
+    _id: string,
+    createdAt: string,
+    title: string,
+    answers: [{
+      _id: string,
+      createdAt: string,
+    }],
+    comments: [{
+      _id: string,
+      createdAt: string,
+    }]
+  }]
 }
 
 
@@ -26,7 +38,7 @@ function Questions(props: Props) {
       {({ loading, error, data }) => {
         if (loading) return <div>Loading</div>;
         if (error) return <h1>ERROR</h1>;
-        if (data) return <QuestionsTable data={data && data.questions} />
+        if (data) return <QuestionsTable data={data && data.getQuestions} />
       }}
     </Query>
   );
