@@ -7,6 +7,7 @@ interface Props {
         {
             _id: string,
             createdAt: string,
+            lastUpdatedAt: string,
             title: string,
             answers: [{
                 _id: string,
@@ -31,7 +32,7 @@ const QuestionsTable = ({ data }: Props) => {
                 </tr>
             </thead>
             <tbody>
-                {data.map(({ _id, title, createdAt, answers, comments }) => (
+                {data.map(({ _id, title, lastUpdatedAt, createdAt, answers, comments }) => (
                     <tr key={_id}>
                         <td style={{ textAlign: 'center' }}>
                             <h2><b>{comments.length}</b></h2>
@@ -47,7 +48,7 @@ const QuestionsTable = ({ data }: Props) => {
                                 </Link>
                             </h4>
                             <div className='user pull right'>
-                            <h6>{new Date(createdAt).toString()}</h6>
+                            <h6>{'Last Updated on: ' + new Date(lastUpdatedAt || 0).toString()}</h6>
                             </div>
                             </div>
 

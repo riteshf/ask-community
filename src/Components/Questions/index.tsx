@@ -14,6 +14,7 @@ interface IQuestion {
   getQuestions: [{
     _id: string,
     createdAt: string,
+    lastUpdatedAt: string,
     title: string,
     answers: [{
       _id: string,
