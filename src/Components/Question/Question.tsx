@@ -39,7 +39,6 @@ function Question(props: Props) {
         if (error) return <h1>ERROR</h1>;
         if (data) {
           let { title, content, comments, answers } = data.getQuestion;
-
           return (
             <div className="card">
               <div className="card-body">

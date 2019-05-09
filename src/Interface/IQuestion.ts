@@ -12,3 +12,8 @@ export interface IQuestion {
     answers: IAnswer[],
 }
 
+export interface IQuestions {
+    getQuestions: IQuestion[]
+}
+
+
