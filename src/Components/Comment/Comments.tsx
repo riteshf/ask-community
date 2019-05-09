@@ -8,11 +8,13 @@ export interface IComments {
 
 
 const Comments = (props: IComments) => (
-    <div className="card">
+    <div className="container">
+        <hr style={{ marginBottom: '3px' }} />
         {
             props.comments.map(({ _id, content, createdAt }) => (
                 <div key={_id}>
                     <Comment _id={_id} content={content} createdAt={createdAt} />
+                    <hr style={{ marginBottom: '3px', marginTop: '3px' }} />
                 </div>
             ))
         }
