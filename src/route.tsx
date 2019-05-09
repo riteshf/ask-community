@@ -1,8 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Questions from './Components/Questions'
-import { QuestionDetails, AskQuestion } from './Components/Question'
+import { Questions, QuestionDetails, AskQuestion } from './Components/Question'
 interface Props {
     search: string,
 };

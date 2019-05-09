@@ -1,6 +1,5 @@
-import QuestionDetails from './QuestionDetails';
+import Questions from './Questions';
+import QuestionDetails from './Question';
 import AskQuestion from './AskQuestion';
 
-
-
-export { QuestionDetails, AskQuestion };
+export { Questions, QuestionDetails, AskQuestion };
