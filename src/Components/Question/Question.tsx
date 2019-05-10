@@ -5,6 +5,7 @@ import gql from 'graphql-tag';
 import Comments from '../Comment/Comments';
 import Answers from '../Answer/Answers';
 import { IQuestion } from '../../Interface/IQuestion';
+import CommentQuestion from '../Comment/CommentQuestion';
 
 interface Props {
   match: {
@@ -40,11 +41,12 @@ function Question(props: Props) {
         if (data) {
           let { title, content, comments, answers } = data.getQuestion;
           return (
-            <div className="card">
+            <div className="card container">
               <div className="card-body">
                 <h3 className="card-title">{title}</h3>
                 <h4 className="card-subtitle mb-2 text-muted">{content}</h4>
                 <Comments comments={comments} />
+                <CommentQuestion />
                 <Answers answers={answers} />
               </div>
             </div>

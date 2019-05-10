@@ -19,7 +19,7 @@ const Questions = (props: Props) => (
             if (loading) return <div>Loading</div>;
             if (error) return <h1>ERROR</h1>;
             if (data) return (
-                <Table responsive>
+                <Table responsive className="container">
                     <thead>
                         <tr>
                             <th style={{ width: '10%', textAlign: 'center' }}>Star</th>

@@ -1,13 +1,9 @@
 import React from 'react';
 
-export interface Props {
-    _id: string,
-    content: string,
-}
 
 
-const CommentQuestion = (props: Props) => (
-    <div className="card-body">
+const CommentQuestion = () => (
+    <div className="container">
     </div>
 )
 
