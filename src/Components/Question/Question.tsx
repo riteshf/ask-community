@@ -2,10 +2,10 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
-import Comments from '../Comment/Comments';
-import Answers from '../Answer/Answers';
 import { IQuestion } from '../../Interface/IQuestion';
-import CommentQuestion from '../Comment/CommentQuestion';
+import QuestionComments from './QuestionComments';
+import QuestionAnswers from './QuestionAnswers';
+
 
 interface Props {
   match: {
@@ -32,7 +32,6 @@ function Question(props: Props) {
       comments { _id, content, createdAt  } 
     } 
   }`;
-
   return (
     <Query<GQLQuestion, Variables> query={getQuestion} variables={{ _id: props.match.params.id }}>
       {({ loading, error, data }) => {
@@ -45,9 +44,8 @@ function Question(props: Props) {
               <div className="card-body">
                 <h3 className="card-title">{title}</h3>
                 <h4 className="card-subtitle mb-2 text-muted">{content}</h4>
-                <Comments comments={comments} />
-                <CommentQuestion />
-                <Answers answers={answers} />
+                <QuestionComments comments={comments} />
+                <QuestionAnswers answers={answers} />
               </div>
             </div>
           )

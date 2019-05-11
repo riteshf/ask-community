@@ -2,14 +2,14 @@ import React from 'react';
 import ReactMde from "react-mde";
 import Showdown from "showdown";
 export interface Props {
-    _id: string,
-    content: string,
+    addNewAnswer: Function,
+
 }
 
 
 const AnswerQuestion = (props: Props) => {
 
-    let [answer, setAnswer] = React.useState(props.content);
+    const [answer, setAnswer] = React.useState('');
     let converter = new Showdown.Converter({
         tables: true,
         simplifiedAutoLink: true,
@@ -17,7 +17,7 @@ const AnswerQuestion = (props: Props) => {
         tasklists: true
     });
     return (
-        <div className="card-body" key={props.content}>
+        <div className="card-body" key={answer}>
             <div className="container">
                 <ReactMde
                     onChange={setAnswer}
