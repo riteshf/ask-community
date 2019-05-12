@@ -1,6 +1,4 @@
 import React from 'react';
-import Comments from '../Comment/Comments';
-import CommentQuestion from '../Comment/CommentQuestion';
 import { IAnswer } from '../../Interface/IAnswer';
 import Answers from '../Answer/Answers';
 import AnswerQuestion from '../Answer/AnswerQuestion';
@@ -26,7 +24,7 @@ function QuestionComments(props: IAnswers) {
     return (
         <div className="QuestionComments">
             <Answers answers={answers} />
-            <AnswerQuestion addNewAnswer={addNewAnswer} />
+            <AnswerQuestion addNewAnswer={addNewAnswer} initialView={"write"} />
         </div >
     );
 }
