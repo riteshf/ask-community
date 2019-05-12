@@ -18,10 +18,15 @@ const AnswerQuestion = (props: Props) => {
         tasklists: true,
     });
 
+    const submitAnswer = () => {
+        props.addNewAnswer(answer);
+        setAnswer('');
+    }
+
     return (
         <div>
-            <h2><b>Your Answer</b></h2>
             <div className="card">
+                <h2 style={{ textAlign: 'center' }}><b>Your Answer</b></h2>
                 <div className="card-body">
                     <ReactMde
                         value={answer}
@@ -30,6 +35,8 @@ const AnswerQuestion = (props: Props) => {
                         selectedTab={view}
                         generateMarkdownPreview={markdown => Promise.resolve(converter.makeHtml(markdown))}
                     />
+                    <br />
+                    <a className="offset-md-10 btn btn-primary" onClick={submitAnswer}>Submit Answer</a>
                 </div>
             </div>
         </div>

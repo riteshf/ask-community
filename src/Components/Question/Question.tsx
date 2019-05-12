@@ -41,15 +41,18 @@ function Question(props: Props) {
         if (data) {
           let { title, content, comments, answers } = data.getQuestion;
           return (
-            <div className="card container">
-              <div className="card-body">
-                <h3 className="card-title">{title}</h3>
-                <div className="card-subtitle mb-2 text-muted">
-                  <ReactMarkdown source={content} />
+            <div className="container">
+              <div className="card">
+                <div className="card-body">
+                  <h3 className="card-title">{title}</h3>
+                  <div className="card-subtitle mb-2 text-muted">
+                    <ReactMarkdown source={content} />
+                  </div>
+                  <QuestionComments comments={comments} />
                 </div>
-                <QuestionComments comments={comments} />
-                <QuestionAnswers answers={answers} />
               </div>
+              <br />
+              <QuestionAnswers answers={answers} />
             </div>
           )
         }

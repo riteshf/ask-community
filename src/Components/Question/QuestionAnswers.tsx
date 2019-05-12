@@ -24,6 +24,7 @@ function QuestionAnswers(props: IAnswers) {
     return (
         <div className="QuestionAnswers">
             {answers && answers.length > 0 && <Answers answers={answers} />}
+            <br />
             <AnswerQuestion addNewAnswer={addNewAnswer} initialView={"write"} />
         </div >
     );

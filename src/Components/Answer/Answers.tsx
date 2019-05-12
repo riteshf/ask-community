@@ -8,9 +8,9 @@ export interface Props {
 
 
 const Answers = ({ answers }: Props) => (
-    <div>
+    <div className="card container">
         <br />
-        <h2><b>Answers</b></h2>
+        <h2 style={{ textAlign: 'center' }}><b>Answers</b></h2>
         {answers.map(({ _id, content, createdAt, comments }) => (
             <div key={_id}>
                 <div className="card">
