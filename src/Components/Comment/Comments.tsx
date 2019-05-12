@@ -8,7 +8,7 @@ export interface IComments {
 
 
 const Comments = (props: IComments) => (
-    <div className="container">
+    <div>
         <hr style={{ marginBottom: '3px' }} />
         {
             props.comments.map(({ _id, content, createdAt }) => (

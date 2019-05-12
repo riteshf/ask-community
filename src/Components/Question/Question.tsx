@@ -5,6 +5,7 @@ import gql from 'graphql-tag';
 import { IQuestion } from '../../Interface/IQuestion';
 import QuestionComments from './QuestionComments';
 import QuestionAnswers from './QuestionAnswers';
+const ReactMarkdown = require('react-markdown');
 
 
 interface Props {
@@ -43,7 +44,9 @@ function Question(props: Props) {
             <div className="card container">
               <div className="card-body">
                 <h3 className="card-title">{title}</h3>
-                <h4 className="card-subtitle mb-2 text-muted">{content}</h4>
+                <div className="card-subtitle mb-2 text-muted">
+                  <ReactMarkdown source={content} />
+                </div>
                 <QuestionComments comments={comments} />
                 <QuestionAnswers answers={answers} />
               </div>

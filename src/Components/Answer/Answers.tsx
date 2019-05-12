@@ -9,15 +9,19 @@ export interface Props {
 
 const Answers = ({ answers }: Props) => (
     <div>
+        <br />
         <h2><b>Answers</b></h2>
-        {answers && answers.length > 0 && answers.map(({ _id, content, createdAt, comments }) => (
-            <div className="card" key={_id}>
-                <Answer
-                    _id={_id}
-                    content={content}
-                    createdAt={createdAt}
-                    comments={comments}
-                />
+        {answers.map(({ _id, content, createdAt, comments }) => (
+            <div key={_id}>
+                <div className="card">
+                    <Answer
+                        _id={_id}
+                        content={content}
+                        createdAt={createdAt}
+                        comments={comments}
+                    />
+                </div>
+                <br />
             </div>
         )
         )}

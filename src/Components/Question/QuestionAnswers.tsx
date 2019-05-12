@@ -8,7 +8,7 @@ interface IAnswers {
     answers: IAnswer[]
 }
 
-function QuestionComments(props: IAnswers) {
+function QuestionAnswers(props: IAnswers) {
     const [answers, addAnswer] = React.useState(props.answers);
     const addNewAnswer = (answer: string) => {
         /* Mutation Call TODO */
@@ -22,11 +22,11 @@ function QuestionComments(props: IAnswers) {
     }
 
     return (
-        <div className="QuestionComments">
-            <Answers answers={answers} />
+        <div className="QuestionAnswers">
+            {answers && answers.length > 0 && <Answers answers={answers} />}
             <AnswerQuestion addNewAnswer={addNewAnswer} initialView={"write"} />
         </div >
     );
 }
 
-export default QuestionComments;
+export default QuestionAnswers;

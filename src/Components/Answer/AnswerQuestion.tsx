@@ -19,15 +19,18 @@ const AnswerQuestion = (props: Props) => {
     });
 
     return (
-        <div className="card-body">
-            <div className="container">
-                <ReactMde
-                    value={answer}
-                    onChange={answer => setAnswer(answer)}
-                    onTabChange={(tab: "write" | "preview") => setView(tab)}
-                    selectedTab={view}
-                    generateMarkdownPreview={markdown => Promise.resolve(converter.makeHtml(markdown))}
-                />
+        <div>
+            <h2><b>Your Answer</b></h2>
+            <div className="card">
+                <div className="card-body">
+                    <ReactMde
+                        value={answer}
+                        onChange={answer => setAnswer(answer)}
+                        onTabChange={(tab: "write" | "preview") => setView(tab)}
+                        selectedTab={view}
+                        generateMarkdownPreview={markdown => Promise.resolve(converter.makeHtml(markdown))}
+                    />
+                </div>
             </div>
         </div>
     )
