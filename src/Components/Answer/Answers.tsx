@@ -8,16 +8,17 @@ export interface Props {
 
 
 const Answers = ({ answers }: Props) => (
-    <div className="card-body">
+    <div>
+        <h2><b>Answers</b></h2>
         {answers && answers.length > 0 && answers.map(({ _id, content, createdAt, comments }) => (
-            <React.Fragment key={_id}>
+            <div className="card" key={_id}>
                 <Answer
                     _id={_id}
                     content={content}
                     createdAt={createdAt}
                     comments={comments}
                 />
-            </React.Fragment>
+            </div>
         )
         )}
     </div>

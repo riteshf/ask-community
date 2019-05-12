@@ -17,7 +17,7 @@ const AnswerQuestion = (props: Props) => {
         strikethrough: true,
         tasklists: true,
     });
-    
+
     return (
         <div className="card-body">
             <div className="container">
@@ -26,9 +26,7 @@ const AnswerQuestion = (props: Props) => {
                     onChange={answer => setAnswer(answer)}
                     onTabChange={(tab: "write" | "preview") => setView(tab)}
                     selectedTab={view}
-                    generateMarkdownPreview={markdown =>
-                        Promise.resolve(converter.makeHtml(markdown))
-                    }
+                    generateMarkdownPreview={markdown => Promise.resolve(converter.makeHtml(markdown))}
                 />
             </div>
         </div>
