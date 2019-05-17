@@ -13,7 +13,8 @@ export interface IQuestion {
 }
 
 export interface IQuestions {
-    getQuestions: IQuestion[]
+    getQuestions: IQuestion[],
+    getQuestionByTitle: IQuestion[]
 }
 
 

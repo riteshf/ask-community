@@ -36,7 +36,7 @@ const AnswerQuestion = (props: Props) => {
                         generateMarkdownPreview={markdown => Promise.resolve(converter.makeHtml(markdown))}
                     />
                     <br />
-                    <a className="offset-md-10 btn btn-primary" onClick={submitAnswer}>Submit Answer</a>
+                    <button className="offset-md-10 btn btn-primary" onClick={submitAnswer}>Submit Answer</button>
                 </div>
             </div>
         </div>

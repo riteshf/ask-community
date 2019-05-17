@@ -8,7 +8,7 @@ interface Props {
 }
 
 function Header(props: Props) {
-  const [string, onStringChange] = React.useState('');
+  const [string, onStringChange] = React.useState<string>('');
 
   const onSearch = (searchString: string) => {
     props.search(searchString);
