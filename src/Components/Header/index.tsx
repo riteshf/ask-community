@@ -15,7 +15,7 @@ function Header(props: Props) {
   }
   return (
     <div className="Header">
-      <Navbar bg="light" expand="lg">
+      <Navbar style={{filter: 'drop-shadow(0px 1px 2px #383a3d)'}} bg="light" expand="lg">
         <Form inline className="col-md-12">
           <div className="col-md-2">
             <Link to="/" style={{ textDecoration: 'none' }}>

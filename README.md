@@ -11,3 +11,4 @@ This is only the front-end of the application the backend is at [Ask Community S
  - ask the question
  - submit the comment on enter/button click
  - User Login
+ - pagination

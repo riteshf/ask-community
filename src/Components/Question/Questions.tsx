@@ -62,7 +62,7 @@ const Questions = (props: Props) => {
                             <thead>
                                 <tr>
                                     <th style={{ textAlign: "center" }}>
-                                        Star
+                                        Comments
                                     </th>
                                     <th style={{ textAlign: "center" }}>
                                         Answer
