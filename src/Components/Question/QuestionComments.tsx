@@ -5,6 +5,7 @@ import { IComment } from '../../Interface/IComment';
 
 
 interface IComments {
+    questionId: string;
     comments: IComment[]
 }
 

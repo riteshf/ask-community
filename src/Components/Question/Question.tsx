@@ -28,7 +28,7 @@ function Question(props: Props) {
   const getQuestion = gql`
   query getQuestion($_id: ID!){
     getQuestion(_id: $_id) { 
-      title, content, createdAt, 
+      _id, title, content, createdAt, 
       answers { _id, content, createdAt, comments { _id, content }  }, 
       comments { _id, content, createdAt  } 
     } 
@@ -39,7 +39,7 @@ function Question(props: Props) {
         if (loading) return <div>Loading</div>;
         if (error) return <h1>ERROR</h1>;
         if (data) {
-          let { title, content, comments, answers } = data.getQuestion;
+          let { _id, title, content, comments, answers } = data.getQuestion;
           return (
             <div className="container">
               <div className="card">
@@ -48,11 +48,11 @@ function Question(props: Props) {
                   <div className="card-subtitle mb-2 text-muted">
                     <ReactMarkdown source={content} />
                   </div>
-                  <QuestionComments comments={comments} />
+                  <QuestionComments comments={comments} questionId={_id} />
                 </div>
               </div>
               <br />
-              <QuestionAnswers answers={answers} />
+              <QuestionAnswers answers={answers} questionId={_id} />
             </div>
           )
         }
